@@ -1,0 +1,422 @@
+[
+    {
+        "cardio_load": 43.6908,
+        "cardio_load_level": {
+            "high": 0.0,
+            "low": 0.0,
+            "medium": 0.0,
+            "very_high": 0.0,
+            "very_low": 0.0
+        },
+        "cardio_load_ratio": -1.0,
+        "cardio_load_status": "LOAD_STATUS_NOT_AVAILABLE",
+        "date": "2024-09-04",
+        "strain": 43.6908,
+        "tolerance": -1.0
+    },
+    {
+        "cardio_load": 57.1041,
+        "cardio_load_level": {
+            "high": 0.0,
+            "low": 0.0,
+            "medium": 0.0,
+            "very_high": 0.0,
+            "very_low": 0.0
+        },
+        "cardio_load_ratio": -1.0,
+        "cardio_load_status": "LOAD_STATUS_NOT_AVAILABLE",
+        "date": "2024-09-05",
+        "strain": 50.39745,
+        "tolerance": -1.0
+    },
+    {
+        "cardio_load": 76.0425,
+        "cardio_load_level": {
+            "high": 0.0,
+            "low": 0.0,
+            "medium": 0.0,
+            "very_high": 0.0,
+            "very_low": 0.0
+        },
+        "cardio_load_ratio": 1.0,
+        "cardio_load_status": "MAINTAINING",
+        "date": "2024-09-06",
+        "strain": 58.9458,
+        "tolerance": 58.9458
+    },
+    {
+        "cardio_load": 0.0,
+        "cardio_load_level": {
+            "high": 73.68225,
+            "low": 29.4729,
+            "medium": 44.20935,
+            "very_high": 117.8916,
+            "very_low": 0.0
+        },
+        "cardio_load_ratio": 1.0,
+        "cardio_load_status": "MAINTAINING",
+        "date": "2024-09-07",
+        "strain": 44.20935,
+        "tolerance": 44.20935
+    },
+    {
+        "cardio_load": 0.0,
+        "cardio_load_level": {
+            "high": 73.68225,
+            "low": 29.4729,
+            "medium": 44.20935,
+            "very_high": 117.8916,
+            "very_low": 0.0
+        },
+        "cardio_load_ratio": 1.0,
+        "cardio_load_status": "MAINTAINING",
+        "date": "2024-09-08",
+        "strain": 35.36748,
+        "tolerance": 35.36748
+    },
+    {
+        "cardio_load": 62.3154,
+        "cardio_load_level": {
+            "high": 73.68225,
+            "low": 29.4729,
+            "medium": 44.20935,
+            "very_high": 117.8916,
+            "very_low": 0.0
+        },
+        "cardio_load_ratio": 1.0,
+        "cardio_load_status": "MAINTAINING",
+        "date": "2024-09-09",
+        "strain": 39.8588,
+        "tolerance": 39.8588
+    },
+    {
+        "cardio_load": 30.8628,
+        "cardio_load_level": {
+            "high": 74.73525,
+            "low": 29.8941,
+            "medium": 44.84115,
+            "very_high": 119.5764,
+            "very_low": 0.0
+        },
+        "cardio_load_ratio": 1.0,
+        "cardio_load_status": "MAINTAINING",
+        "date": "2024-09-10",
+        "strain": 38.573658,
+        "tolerance": 38.573658
+    },
+    {
+        "cardio_load": 0.0,
+        "cardio_load_level": {
+            "high": 67.5039,
+            "low": 27.00156,
+            "medium": 40.502342,
+            "very_high": 108.00624,
+            "very_low": 0.0
+        },
+        "cardio_load_ratio": 0.95793325,
+        "cardio_load_status": "MAINTAINING",
+        "date": "2024-09-11",
+        "strain": 32.332115,
+        "tolerance": 33.75195
+    },
+    {
+        "cardio_load": 0.0,
+        "cardio_load_level": {
+            "high": 67.5039,
+            "low": 27.00156,
+            "medium": 40.502342,
+            "very_high": 108.00624,
+            "very_low": 0.0
+        },
+        "cardio_load_ratio": 0.8057663,
+        "cardio_load_status": "MAINTAINING",
+        "date": "2024-09-12",
+        "strain": 24.174387,
+        "tolerance": 30.001734
+    },
+    {
+        "cardio_load": 0.0,
+        "cardio_load_level": {
+            "high": 67.5039,
+            "low": 27.00156,
+            "medium": 40.502342,
+            "very_high": 108.00624,
+            "very_low": 0.0
+        },
+        "cardio_load_ratio": 0.49297786,
+        "cardio_load_status": "DETRAINING",
+        "date": "2024-09-13",
+        "strain": 13.311172,
+        "tolerance": 27.00156
+    },
+    {
+        "cardio_load": 0.0,
+        "cardio_load_level": {
+            "high": 67.5039,
+            "low": 27.00156,
+            "medium": 40.502342,
+            "very_high": 108.00624,
+            "very_low": 0.0
+        },
+        "cardio_load_ratio": 0.54227567,
+        "cardio_load_status": "DETRAINING",
+        "date": "2024-09-14",
+        "strain": 13.311172,
+        "tolerance": 24.546873
+    },
+    {
+        "cardio_load": 0.0,
+        "cardio_load_level": {
+            "high": 67.5039,
+            "low": 27.00156,
+            "medium": 40.502342,
+            "very_high": 108.00624,
+            "very_low": 0.0
+        },
+        "cardio_load_ratio": 0.5915734,
+        "cardio_load_status": "DETRAINING",
+        "date": "2024-09-15",
+        "strain": 13.311172,
+        "tolerance": 22.5013
+    },
+    {
+        "cardio_load": 78.6012,
+        "cardio_load_level": {
+            "high": 67.5039,
+            "low": 27.00156,
+            "medium": 40.502342,
+            "very_high": 108.00624,
+            "very_low": 0.0
+        },
+        "cardio_load_ratio": 0.58313394,
+        "cardio_load_status": "DETRAINING",
+        "date": "2024-09-16",
+        "strain": 15.637713,
+        "tolerance": 26.816677
+    },
+    {
+        "cardio_load": 76.2543,
+        "cardio_load_level": {
+            "high": 72.628494,
+            "low": 29.0514,
+            "medium": 43.5771,
+            "very_high": 116.2056,
+            "very_low": 0.0
+        },
+        "cardio_load_ratio": 0.7289528,
+        "cardio_load_status": "DETRAINING",
+        "date": "2024-09-17",
+        "strain": 22.122213,
+        "tolerance": 30.347937
+    },
+    {
+        "cardio_load": 73.8126,
+        "cardio_load_level": {
+            "high": 75.869835,
+            "low": 30.347935,
+            "medium": 45.521904,
+            "very_high": 121.39174,
+            "very_low": 0.0
+        },
+        "cardio_load_ratio": 0.9825929,
+        "cardio_load_status": "MAINTAINING",
+        "date": "2024-09-18",
+        "strain": 32.66687,
+        "tolerance": 33.24558
+    },
+    {
+        "cardio_load": 0.0,
+        "cardio_load_level": {
+            "high": 77.91933,
+            "low": 31.16773,
+            "medium": 46.751595,
+            "very_high": 124.67092,
+            "very_low": 0.0
+        },
+        "cardio_load_ratio": 1.0480992,
+        "cardio_load_status": "PRODUCTIVE",
+        "date": "2024-09-19",
+        "strain": 32.66687,
+        "tolerance": 31.167732
+    },
+    {
+        "cardio_load": 60.7655,
+        "cardio_load_level": {
+            "high": 77.91933,
+            "low": 31.16773,
+            "medium": 46.751595,
+            "very_high": 124.67092,
+            "very_low": 0.0
+        },
+        "cardio_load_ratio": 1.2564325,
+        "cardio_load_status": "PRODUCTIVE",
+        "date": "2024-09-20",
+        "strain": 41.347656,
+        "tolerance": 32.908775
+    },
+    {
+        "cardio_load": 0.0,
+        "cardio_load_level": {
+            "high": 77.70127,
+            "low": 31.08051,
+            "medium": 46.620766,
+            "very_high": 124.32204,
+            "very_low": 0.0
+        },
+        "cardio_load_ratio": 1.3303403,
+        "cardio_load_status": "OVERREACHING",
+        "date": "2024-09-21",
+        "strain": 41.347656,
+        "tolerance": 31.080511
+    },
+    {
+        "cardio_load": 0.0,
+        "cardio_load_level": {
+            "high": 77.70127,
+            "low": 31.08051,
+            "medium": 46.620766,
+            "very_high": 124.32204,
+            "very_low": 0.0
+        },
+        "cardio_load_ratio": 1.4042481,
+        "cardio_load_status": "OVERREACHING",
+        "date": "2024-09-22",
+        "strain": 41.347656,
+        "tolerance": 29.444695
+    },
+    {
+        "cardio_load": 0.0,
+        "cardio_load_level": {
+            "high": 77.70127,
+            "low": 31.08051,
+            "medium": 46.620766,
+            "very_high": 124.32204,
+            "very_low": 0.0
+        },
+        "cardio_load_ratio": 1.0767345,
+        "cardio_load_status": "PRODUCTIVE",
+        "date": "2024-09-23",
+        "strain": 30.118914,
+        "tolerance": 27.97246
+    },
+    {
+        "cardio_load": 63.2233,
+        "cardio_load_level": {
+            "high": 77.70127,
+            "low": 31.08051,
+            "medium": 46.620766,
+            "very_high": 124.32204,
+            "very_low": 0.0
+        },
+        "cardio_load_ratio": 0.95299566,
+        "cardio_load_status": "MAINTAINING",
+        "date": "2024-09-24",
+        "strain": 28.257343,
+        "tolerance": 29.651072
+    },
+    {
+        "cardio_load": 12.0389,
+        "cardio_load_level": {
+            "high": 77.83406,
+            "low": 31.133625,
+            "medium": 46.70044,
+            "very_high": 124.5345,
+            "very_low": 0.0
+        },
+        "cardio_load_ratio": 0.67355907,
+        "cardio_load_status": "RECOVERY_AFTER_OVERREACHING",
+        "date": "2024-09-25",
+        "strain": 19.43253,
+        "tolerance": 28.850517
+    },
+    {
+        "cardio_load": 54.8128,
+        "cardio_load_level": {
+            "high": 72.1263,
+            "low": 28.850517,
+            "medium": 43.275776,
+            "very_high": 115.40207,
+            "very_low": 0.0
+        },
+        "cardio_load_ratio": 0.9093914,
+        "cardio_load_status": "MAINTAINING",
+        "date": "2024-09-26",
+        "strain": 27.262928,
+        "tolerance": 29.979313
+    },
+    {
+        "cardio_load": 72.9047,
+        "cardio_load_level": {
+            "high": 71.82543,
+            "low": 28.730173,
+            "medium": 43.09526,
+            "very_high": 114.92069,
+            "very_low": 0.0
+        },
+        "cardio_load_ratio": 0.91278076,
+        "cardio_load_status": "MAINTAINING",
+        "date": "2024-09-27",
+        "strain": 28.9971,
+        "tolerance": 31.767872
+    },
+    {
+        "cardio_load": 0.0,
+        "cardio_load_level": {
+            "high": 73.31047,
+            "low": 29.324188,
+            "medium": 43.986282,
+            "very_high": 117.29675,
+            "very_low": 0.0
+        },
+        "cardio_load_ratio": 0.95081323,
+        "cardio_load_status": "MAINTAINING",
+        "date": "2024-09-28",
+        "strain": 28.9971,
+        "tolerance": 30.497156
+    },
+    {
+        "cardio_load": 0.0,
+        "cardio_load_level": {
+            "high": 73.31047,
+            "low": 29.324188,
+            "medium": 43.986282,
+            "very_high": 117.29675,
+            "very_low": 0.0
+        },
+        "cardio_load_ratio": 0.98884577,
+        "cardio_load_status": "MAINTAINING",
+        "date": "2024-09-29",
+        "strain": 28.9971,
+        "tolerance": 29.324188
+    },
+    {
+        "cardio_load": 0.0,
+        "cardio_load_level": {
+            "high": 73.31047,
+            "low": 29.324188,
+            "medium": 43.986282,
+            "very_high": 117.29675,
+            "very_low": 0.0
+        },
+        "cardio_load_ratio": 1.0268784,
+        "cardio_load_status": "PRODUCTIVE",
+        "date": "2024-09-30",
+        "strain": 28.9971,
+        "tolerance": 28.238108
+    },
+    {
+        "cardio_load": 0.0,
+        "cardio_load_level": {
+            "high": 73.31047,
+            "low": 29.324188,
+            "medium": 43.986282,
+            "very_high": 117.29675,
+            "very_low": 0.0
+        },
+        "cardio_load_ratio": 0.7332167,
+        "cardio_load_status": "RECOVERY_AFTER_OVERREACHING",
+        "date": "2024-10-01",
+        "strain": 19.9652,
+        "tolerance": 27.229603
+    }
+]

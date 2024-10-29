@@ -1,0 +1,235 @@
+{
+  "schedule": {
+    "2024-10-14": {
+      "type": "Força",
+      "exercises": [
+        {
+          "category": "Bi-Set","details": "",
+          "sets": [
+
+              "Deadlift",
+              "Supino"
+
+          ]
+        },
+        {
+          "category": "Bi-Set",
+          "sets": [
+
+             "Agachamento Frontal",
+              "Remada Curvada"
+
+          ]
+        }
+      ]
+    },
+    "2024-10-15": {
+      "type": "Condicionamento",
+      "exercises": [
+        {
+          "category": "Mobilidade","details": "",
+          "sets": [
+            "Avião",
+            "Rotação Liga",
+            "Equilibrio Ketbell",
+            "Perdigueiro",
+            "Extensora com miniband"
+          ]
+        },
+        {
+          "category": "Cardio I","details": "",
+          "sets": [
+            "Burpee",
+            "Abs Supra",
+            "Remada Alta Kettlebell",
+            "Step up"
+          ]
+        },
+        {
+          "category": "Cardio II","details": "",
+          "sets": [
+            "Wall Ball",
+            "Sprow",
+            "Swing Kettlebell Alternado",
+            "Abs Bicicleta"
+          ]
+        }
+      ]
+    },
+    "2024-10-17": {
+      "type": "LPO",
+      "exercises": [
+        {
+          "category": "Aquecimento","details": "",
+          "sets": [
+            "Overhead Squat",
+            "Polichinelo",
+            "Supino com Anilha"
+          ]
+        },
+        {
+          "category": "Potência","details": "",
+          "sets": [
+            "Push Press",
+            "High Pull",
+            "Power Clean",
+            "Front Squat"
+          ]
+        },
+        {
+          "category": "Reforço Muscular","details": "",
+          "sets": [
+            "Bíceps",
+            "Tríceps"
+          ]
+        }
+      ]
+    },
+    "2024-10-18": {
+      "type": "Recovery",
+      "exercises": [
+          {
+          "category": "Descanso",
+          "details": "Joelho",
+          "sets":
+          [
+        "Alongamentos",
+        "Liberação Miofascial",
+        "Bota de Compressão"
+          ]
+        }
+      ]
+    },
+    "2024-10-21": {
+      "type": "Força",
+      "exercises": [
+        {
+          "category": "Dominâncias",
+          "details": "Joelho e empurrar",
+          "sets": ["Mobilidade Ombro", "Mobilidade Joelho","Estabilidade Joelho"]
+        },
+        {
+          "category": "Aquecimento",
+          "sets": ["TRX","Flexão","Agachamento","Elevação de quadril unilateral"]
+        },
+        {
+          "category": "Força","details": "",
+          "sets": [
+            "Supino",
+            "Desenvolvimento",
+            "Elevação frontal"
+          ]
+        },
+        {
+          "category": "Força",
+          "sets": ["Agachamento","Búlgaro","Recuo + Step Up"]
+        }
+      ]
+    },
+    "2024-10-22": {
+      "type": "Fortalecimento Core",
+      "exercises": [
+        {
+          "category": "Mobilidade","details": "",
+          "sets": [
+            "Miniband"
+          ]
+        },
+        {
+          "category": "Cardio 1","details": "",
+          "sets": [
+            "Sprow com peso",
+            "Abs bicicleta",
+            "Swing alternado com kettlebell"
+          ]
+        },
+        {
+          "category": "Cardio 2","details": "",
+          "sets": [
+            "Abs dinâmico",
+            "Abs kettlebell alternado",
+            "Abs normal"
+          ]
+        }
+      ]
+    },
+    "2024-10-23": {
+      "type": "Força e Mobilidade",
+      "exercises": [
+        {
+          "category": "Mobilidade","details": "",
+          "sets": [
+            "Miofascial",
+            "Ombro, quadril, tórax"
+          ]
+        },
+        {
+          "category": "Aquecimento",
+          "details": "Dorsais e Posterior",
+          "sets": [
+            "Prancha dinâmica com halter",
+            "Elevação de quadril unilateral",
+            "Perdigueiro"
+          ]
+        },
+        {
+          "category": "Principal",
+          "details": "Dorsais e Posterior",
+          "sets": [
+            "Puxada baixa / Flexão na bola ou TRX",
+            "Puxada alta / Stiff",
+            "Remada curvada / Elevação pélvica"
+          ]
+        }
+      ]
+    },
+    "2024-10-28": {
+      "type": "Força e Mobilidade",
+      "exercises": [
+        {
+          "category": "Mobilidade",
+          "details": "Joelho e empurrar",
+          "sets": ["Ombro","Joelho"]
+        },
+        {
+          "category": "Estabilidade",
+          "details": "Joelho",
+          "sets": [
+            "Ombro"
+          ]
+        },
+        {
+          "category": "Aquecimento","details": "",
+          "sets": [
+            "Supino anilha",
+            "Flexão",
+            "Agachamento com desenvolvimento"
+          ]
+        },
+        {
+          "category": "Principal","details": "",
+          "sets": [
+            "Supino",
+            "Step up",
+            "Elevação frontal"
+          ]
+        },
+        {
+          "category": "Principal","details": "",
+          "sets": [
+            "Agachamento",
+            "Desenvolvimento com barra",
+            "Elevação frontal"
+          ]
+        },
+        {
+          "category": "Tabata","details": "",
+          "sets": [
+            "Sprow",
+            "Clean"
+          ]
+        }
+      ]
+    }
+  }
+}
