@@ -230,6 +230,90 @@
           ]
         }
       ]
+    },
+    "2024-10-29": {
+      "type": "Força e Mobilidade",
+      "exercises": [
+        {
+          "category": "Landmine variações",
+          "details": "Landmine variações",
+          "sets": ["Ombro","Joelho"]
+        }
+      ]
+    },
+    "2024-10-30": {
+      "type": "Força e Mobilidade",
+      "exercises": [
+        {
+          "category": "Auto Liberação",
+          "sets": [
+            "Auto liberação"
+          ]
+        },
+        {
+          "category": "Mobilidade",
+          "sets": [
+            "Mobilidade geral"
+          ]
+        },
+        {
+          "category": "Aquecimento",
+          "sets": [
+            "TRX - 15",
+            "Ponte lateral 10/10",
+            "Elevação unilateral 10/10"
+          ]
+        },
+        {
+          "category": "Principal",
+          "sets": [
+            "Puxada baixa / flexão na bola",
+            "Crucifixo inclinado / stiff",
+            "Puxada alta / abd ad miniband"
+          ]
+        }
+      ]
+    },
+    "2024-10-31": {
+      "type": "Técnicas de LPO",
+      "exercises": [
+        {
+          "category": "Autoliberação Miofascial",
+          "sets": [
+            "Autoliberação miofascial"
+          ]
+        },
+        {
+          "category": "Mobilidade",
+          "sets": [
+            "Mobilidade"
+          ]
+        },
+        {
+          "category": "Aquecimento",
+          "sets": [
+            "Overhead 15",
+            "Prancha com uma mão dinâmica 20",
+            "Remada alta + Agachamento 10"
+          ]
+        },
+        {
+          "category": "Principal",
+          "sets": [
+            "Push Press",
+            "High Pull",
+            "Power Clean"
+          ]
+        },
+        {
+          "category": "Core",
+          "sets": [
+            "Prancha",
+            "Abs remador",
+            "Flexão 'Pé a Pé'"
+          ]
+        }
+      ]
     }
   }
 }
