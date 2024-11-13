@@ -314,6 +314,122 @@
           ]
         }
       ]
+    },
+    "2024-11-04": {
+      "type": "Força e Mobilidade",
+      "exercises": [
+        {
+          "category": "Autoliberação",
+          "sets": [
+            "Autoliberação"
+          ]
+        },
+        {
+          "category": "Mobilidade",
+          "details": "Ombro e quadril",
+          "sets": [
+            "Mobilidade (ombro e quadril)"
+          ]
+        },
+        {
+          "category": "Aquecimento",
+          "sets": [
+            "TRX",
+            "Elevação de quadril unilateral",
+            "Flexão",
+            "Agachamentos"
+          ]
+        },
+        {
+          "category": "Principal",
+          "details": "4x",
+          "sets": [
+            "Supino",
+            "Equilíbrio wall ball",
+            "Remada curvada",
+            "Passada lateral com miniband"
+          ]
+        },
+        {
+          "category": "Alongamento",
+          "sets": [
+            "Alongamento"
+          ]
+        }
+      ]
+    },
+    "2024-11-05": {
+      "type": "Força e Mobilidade",
+      "exercises": [
+        {
+          "category": "Autoliberação",
+          "sets": [
+            "Autoliberação"
+          ]
+        },
+        {
+          "category": "Mobilidade",
+          "details": "Geral",
+          "sets": [
+            "Mobilidade geral"
+          ]
+        },
+        {
+          "category": "Core",
+          "sets": [
+            "Hiperextensão / Prancha na bola",
+            "Rotação na polia",
+            "Perdigueiro"
+          ]
+        },
+        {
+          "category": "Tabata",
+          "sets": [
+            "Ponte alta",
+            "Superman"
+          ]
+        }
+      ]
+    },
+     "2024-11-07": {
+      "type": "Força e Mobilidade",
+      "exercises": [
+        {
+          "category": "Autoliberação",
+          "sets": [
+            "Auto liberação"
+          ]
+        },
+        {
+          "category": "Mobilidade",
+          "sets": [
+            "Mobilidade"
+          ]
+        },
+        {
+          "category": "Aquecimento",
+          "details": "30 segundos cada",
+          "sets": [
+            "Miniband",
+            "Rotação liga",
+            "Prancha"
+          ]
+        },
+        {
+          "category": "Força",
+          "sets": [
+            "Remada baixa máquina",
+            "Step up"
+          ]
+        },
+        {
+          "category": "Desenvolvimento",
+          "sets": [
+            "Desenvolvimento",
+            "Elevação de quadril unilateral no banco"
+          ]
+        }
+      ]
     }
   }
 }
