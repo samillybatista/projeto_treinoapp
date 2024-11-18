@@ -430,6 +430,75 @@
           ]
         }
       ]
+    },
+    "2024-11-13": {
+      "type": "Força",
+      "exercises": [
+        {
+          "category": "Aquecimento",
+          "sets": [
+            "Flexão",
+            "Agachamento",
+            "RX",
+            "Deadlift kettlebell"
+          ]
+        },
+        {
+          "category": "Força",
+          "sets": [
+            "Supino",
+            "Remada supinada",
+            "Deadlift",
+            "Agachamento livre com barra"
+          ]
+        }
+      ]
+    },
+    "2024-11-14": {
+      "type": "Força e Mobilidade",
+      "exercises": [
+        {
+          "category": "Mobilidade",
+          "details": "Ombro e quadril",
+          "sets": [
+            "Mobilidade (ombro e quadril)"
+          ]
+        },
+        {
+          "category": "Ativação",
+          "sets": [
+            "Clean 12",
+            "Ponte alta 10/10",
+            "Swing alternado 10/10"
+          ]
+        },
+        {
+          "category": "Core",
+          "sets": [
+            "Prancha",
+            "Superman",
+            "Abs remador (anilha)",
+            "Abs russo",
+            "Ponte lateral"
+          ]
+        },
+        {
+          "category": "Reforço Muscular",
+          "sets": [
+            "Stiff",
+            "Flexão na bola unilateral",
+            "Abdução miniband"
+          ]
+        },
+        {
+          "category": "Cardio",
+          "sets": [
+            "Sprawl",
+            "Wall ball",
+            "Air bike"
+          ]
+        }
+      ]
     }
   }
 }
