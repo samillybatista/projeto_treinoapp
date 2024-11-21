@@ -65,7 +65,7 @@ class PolarAccessLinkExample(object):
         else:
             print("O JSON de exercícios contém dados:", exercise)
             pretty_print_json(exercise)
-            save_as_json(exercise, 'Data/exercise.json')
+            save_as_json(exercise, 'Data/bioData.json')
 
     def get_user_information(self):
         # Obtém informações do usuário

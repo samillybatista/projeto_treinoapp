@@ -5,7 +5,7 @@ from sklearn.cluster import KMeans
 from DataAnalysis.DataLoader import DataLoader
 
 # Caminho para o arquivo JSON fornecido
-file_path = '../Data/exercise.json'
+file_path = '../Data/bioData.json'
 
 # Exemplo de como carregar os dados (usando sua classe DataLoader)
 data_loader = DataLoader(file_path)

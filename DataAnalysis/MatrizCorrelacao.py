@@ -6,7 +6,7 @@ import seaborn as sns
 from DataAnalysis.DataLoader import DataLoader
 
 # Caminho para o arquivo JSON fornecido
-file_path = '../Data/exercise.json'
+file_path = '../Data/bioData.json'
 
 data_loader = DataLoader(file_path)
 json_data = data_loader.load_json_data()
