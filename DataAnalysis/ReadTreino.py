@@ -1,7 +1,11 @@
 import json
-
+import sys
+import os
+import json
 # Carregar o JSON dos treinos
-with open("../Data/set.json", "r") as file:
+project_root = os.path.dirname(os.path.abspath(__file__))  # Diretório do script atual
+file_path = os.path.join(project_root,'..' ,'Data', 'set.json')
+with open(file_path, "r") as file:
     data = json.load(file)
 
 
