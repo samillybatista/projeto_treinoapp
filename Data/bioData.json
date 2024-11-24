@@ -610,5 +610,59 @@
         "start_time": "2024-11-14T18:05:44",
         "start_time_utc_offset": -180,
         "upload_time": "2024-11-14T21:58:38Z"
+    },
+    {
+        "calories": 462,
+        "detailed_sport_info": "FUNCTIONAL_TRAINING",
+        "device": "Polar Verity Sense",
+        "device_id": "D0F3FE28",
+        "duration": "PT3186S",
+        "has_route": false,
+        "heart_rate": {
+            "average": 118,
+            "maximum": 150
+        },
+        "id": "5p7kQRVG",
+        "polar_user": "https://www.polaraccesslink.com/v3/users/61922800",
+        "sport": "OTHER",
+        "start_time": "2024-11-18T18:11:40",
+        "start_time_utc_offset": -180,
+        "upload_time": "2024-11-18T22:04:49Z"
+    },
+    {
+        "calories": 482,
+        "detailed_sport_info": "FUNCTIONAL_TRAINING",
+        "device": "Polar Verity Sense",
+        "device_id": "D0F40523",
+        "duration": "PT2822S",
+        "has_route": false,
+        "heart_rate": {
+            "average": 128,
+            "maximum": 168
+        },
+        "id": "PknvRARG",
+        "polar_user": "https://www.polaraccesslink.com/v3/users/61922800",
+        "sport": "OTHER",
+        "start_time": "2024-11-19T18:06:27",
+        "start_time_utc_offset": -180,
+        "upload_time": "2024-11-19T21:56:40Z"
+    },
+    {
+        "calories": 505,
+        "detailed_sport_info": "FUNCTIONAL_TRAINING",
+        "device": "Polar Verity Sense",
+        "device_id": "D0F37B2D",
+        "duration": "PT3378S",
+        "has_route": false,
+        "heart_rate": {
+            "average": 119,
+            "maximum": 151
+        },
+        "id": "y8aoKMWJ",
+        "polar_user": "https://www.polaraccesslink.com/v3/users/61922800",
+        "sport": "OTHER",
+        "start_time": "2024-11-21T19:06:12",
+        "start_time_utc_offset": -180,
+        "upload_time": "2024-11-21T23:03:13Z"
     }
 ]

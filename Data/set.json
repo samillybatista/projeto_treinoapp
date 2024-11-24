@@ -499,6 +499,118 @@
           ]
         }
       ]
+    },
+    "2024-11-18": {
+      "type": "Força e Mobilidade",
+      "exercises": [
+        {
+          "category": "Mobilidade",
+          "details": "Ombros e quadril",
+          "sets": [
+            "Mobilidade (ombros/quadril)"
+          ]
+        },
+        {
+          "category": "Aquecimento",
+          "sets": [
+            "Agachamento com salto 10x",
+            "Flexão",
+            "Rotação de polia"
+          ]
+        },
+        {
+          "category": "Joelhos",
+          "sets": [
+            "Back Squat",
+            "Step up",
+            "Goblet Squat"
+          ]
+        },
+        {
+          "category": "Empurrar",
+          "sets": [
+            "Supino",
+            "Desenvolvimento",
+            "Tríceps polia"
+          ]
+        }
+      ]
+    },
+    "2024-11-19": {
+      "type": "Força e Condicionamento",
+      "exercises": [
+        {
+          "category": "Autoliberação",
+          "details": "Miofascial",
+          "sets": [
+            "Autoliberação miofascial"
+          ]
+        },
+        {
+          "category": "Mobilidade",
+          "details": "Geral",
+          "sets": [
+            "Mobilidade geral"
+          ]
+        },
+        {
+          "category": "Core",
+          "sets": [
+            "Abs remador",
+            "Abs borboleta",
+            "Rotação kettlebell",
+            "Ponte alta dinâmica",
+            "Ponte baixa"
+          ]
+        },
+        {
+          "category": "Cardio 1",
+          "sets": [
+            "Step up",
+            "Burpee",
+            "Air bike"
+          ]
+        },
+        {
+          "category": "Cardio 2",
+          "sets": [
+            "Swing kettlebell",
+            "Sprawl",
+            "Polichinelo"
+          ]
+        }
+      ]
+    },
+    "2024-11-21": {
+      "type": "Força e Mobilidade",
+      "exercises": [
+        {
+          "category": "Mobilidade",
+          "details": "Tórax e quadril",
+          "sets": [
+            "Mobilidade toráx/quadril"
+          ]
+        },
+        {
+          "category": "Aquecimento",
+          "sets": [
+            "Elevação de quadril",
+            "Abdução com miniband",
+            "Clean com anilha"
+          ]
+        },
+        {
+          "category": "Força",
+          "sets": [
+            "Barra fixa",
+            "Remada cavalinho",
+            "Puxada baixa",
+            "Deadlift",
+            "Stiff",
+            "Elevação pélvica"
+          ]
+        }
+      ]
     }
   }
 }
