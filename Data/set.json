@@ -611,6 +611,120 @@
           ]
         }
       ]
+    },
+    "2024-11-25": {
+      "type": "Força e Mobilidade",
+      "exercises": [
+        {
+          "category": "Mobilidade",
+          "details": "Ombros e quadril",
+          "sets": [
+            "Mobilidade ombros/quadril"
+          ]
+        },
+        {
+          "category": "Aquecimento",
+          "sets": [
+            "Agachamento",
+            "Flexão",
+            "Perdigueiro"
+          ]
+        },
+        {
+          "category": "Joelhos",
+          "sets": [
+            "Back Squat",
+            "Recuo",
+            "Step up"
+          ]
+        },
+        {
+          "category": "Empurrar",
+          "sets": [
+            "Supino inclinado",
+            "Desenvolvimento",
+            "Elevação lateral"
+          ]
+        }
+      ]
+    },
+    "2024-11-27": {
+      "type": "Força e Mobilidade",
+      "exercises": [
+        {
+          "category": "Mobilidade",
+          "details": "Quadril e escápulas",
+          "sets": [
+            "Ponte alta dinâmica"
+          ]
+        },
+        {
+          "category": "Aquecimento",
+          "sets": [
+            "T.R.X 15",
+            "Elevação pélvica 10/10",
+            "Swing kettlebell 15"
+          ]
+        },
+        {
+          "category": "Principal",
+          "sets": [
+            "Puxada alta",
+            "Puxada baixa",
+            "Pull down",
+            "Deadlift",
+            "Flexora adaptada",
+            "Stiff",
+            "Elevação pélvica"
+          ]
+        }
+      ]
+    },
+    "2024-11-28": {
+      "type": "Força e Mobilidade",
+      "exercises": [
+        {
+          "category": "Mobilidade Geral",
+          "details": "Autoliberação miofascial",
+          "sets": []
+        },
+        {
+          "category": "Aquecimento",
+          "details": "",
+          "sets": [
+            "Agachamento com salto 20\"x10\" 4x",
+            "Superman",
+            "Polichinelo"
+          ]
+        },
+        {
+          "category": "Potência",
+          "details": "15\"x30\" 4x",
+          "sets": [
+            "Remada curvada",
+            "Push Press",
+            "Agachamento",
+            "High Pull"
+          ]
+        },
+        {
+          "category": "Tabata 1",
+          "details": "",
+          "sets": [
+            "Burpee",
+            "Abs Supra"
+          ]
+        },
+        {
+          "category": "Tabata 2",
+          "details": "",
+          "sets": [
+            "Corrida estacionária",
+            "Salto lateral"
+          ]
+        }
+      ]
     }
   }
 }
+

@@ -664,5 +664,77 @@
         "start_time": "2024-11-21T19:06:12",
         "start_time_utc_offset": -180,
         "upload_time": "2024-11-21T23:03:13Z"
+    },
+    {
+        "calories": 345,
+        "detailed_sport_info": "FUNCTIONAL_TRAINING",
+        "device": "Polar Verity Sense",
+        "device_id": "D1710024",
+        "duration": "PT2796S",
+        "has_route": false,
+        "heart_rate": {
+            "average": 110,
+            "maximum": 147
+        },
+        "id": "Pknv2gLX",
+        "polar_user": "https://www.polaraccesslink.com/v3/users/61922800",
+        "sport": "OTHER",
+        "start_time": "2024-11-25T18:06:50",
+        "start_time_utc_offset": -180,
+        "upload_time": "2024-11-25T21:55:49Z"
+    },
+    {
+        "calories": 391,
+        "detailed_sport_info": "FUNCTIONAL_TRAINING",
+        "device": "Polar Verity Sense",
+        "device_id": "D0F40523",
+        "duration": "PT3238S",
+        "has_route": false,
+        "heart_rate": {
+            "average": 109,
+            "maximum": 148
+        },
+        "id": "PaZmvekO",
+        "polar_user": "https://www.polaraccesslink.com/v3/users/61922800",
+        "sport": "OTHER",
+        "start_time": "2024-11-27T19:03:30",
+        "start_time_utc_offset": -180,
+        "upload_time": "2024-11-27T23:00:55Z"
+    },
+    {
+        "calories": 325,
+        "detailed_sport_info": "FUNCTIONAL_TRAINING",
+        "device": "Polar Verity Sense",
+        "device_id": "D0F37B2D",
+        "duration": "PT3324S",
+        "has_route": false,
+        "heart_rate": {
+            "average": 102,
+            "maximum": 144
+        },
+        "id": "ygqpNEVj",
+        "polar_user": "https://www.polaraccesslink.com/v3/users/61922800",
+        "sport": "OTHER",
+        "start_time": "2024-11-28T19:00:22",
+        "start_time_utc_offset": -180,
+        "upload_time": "2024-11-28T22:55:50Z"
+    },
+    {
+        "calories": 419,
+        "detailed_sport_info": "FUNCTIONAL_TRAINING",
+        "device": "Polar Verity Sense",
+        "device_id": "D0F37B2D",
+        "duration": "PT2840S",
+        "has_route": false,
+        "heart_rate": {
+            "average": 118,
+            "maximum": 160
+        },
+        "id": "PvgRGvjB",
+        "polar_user": "https://www.polaraccesslink.com/v3/users/61922800",
+        "sport": "OTHER",
+        "start_time": "2024-11-29T18:07:54",
+        "start_time_utc_offset": -180,
+        "upload_time": "2024-11-29T22:00:17Z"
     }
 ]
