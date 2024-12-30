@@ -736,5 +736,23 @@
         "start_time": "2024-11-29T18:07:54",
         "start_time_utc_offset": -180,
         "upload_time": "2024-11-29T22:00:17Z"
+    },
+    {
+        "calories": 335,
+        "detailed_sport_info": "OTHER_OUTDOOR",
+        "device": "Polar Flow app",
+        "distance": 77.0,
+        "duration": "PT4226.209S",
+        "has_route": true,
+        "heart_rate": {
+            "average": 93,
+            "maximum": 125
+        },
+        "id": "PoZpwge3",
+        "polar_user": "https://www.polaraccesslink.com/v3/users/61922800",
+        "sport": "OTHER",
+        "start_time": "2024-12-30T17:40:01",
+        "start_time_utc_offset": -180,
+        "upload_time": "2024-12-30T21:50:44Z"
     }
 ]

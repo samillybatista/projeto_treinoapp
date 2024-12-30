@@ -724,6 +724,58 @@
           ]
         }
       ]
+    },
+     "2024-12-30": {
+      "type": "Treino de Glúteos, Posterior de Coxa e Panturrilha",
+      "exercises": [
+        {
+          "category": "Glúteos",
+          "sets": [
+            {
+              "exercise": "Ostra com elástico",
+              "details": "3 séries, 30 repetições, 45s descanso"
+            },
+            {
+              "exercise": "Elevação Pélvica com abdução de Quadril usando Elástico",
+              "details": "3 séries, 20 repetições, 45s descanso"
+            }
+          ]
+        },
+        {
+          "category": "Posterior de Coxa",
+          "sets": [
+            {
+              "exercise": "Cadeira abdutora 90°",
+              "details": "3 séries, 15-12-10 repetições, 45s descanso"
+            },
+            {
+              "exercise": "Elevação pélvica na máquina",
+              "details": "3 séries, 15-12-10 repetições, 45s descanso"
+            },
+            {
+              "exercise": "Mesa flexora",
+              "details": "3 séries, 15-12-10 repetições, 45s descanso"
+            },
+            {
+              "exercise": "Cadeira flexora",
+              "details": "3 séries, 15-12-10 repetições, 45s descanso"
+            }
+          ]
+        },
+        {
+          "category": "Panturrilha",
+          "sets": [
+            {
+              "exercise": "Panturrilha em pé na máquina",
+              "details": "3 séries, 20 repetições, 45s descanso"
+            },
+            {
+              "exercise": "Panturrilha no leg press",
+              "details": "3 séries, 20 repetições, 45s descanso"
+            }
+          ]
+        }
+      ]
     }
   }
 }
