@@ -3,8 +3,11 @@
 from __future__ import print_function
 from utils import load_config, save_config, pretty_print_json, save_as_json, save_as_json_data_transacional
 from accesslink import AccessLink
+import os
 
-CONFIG_FILENAME = "config.yml"
+CONFIG_FILENAME = os.path.join(os.path.dirname(__file__), 'config.yml')
+
+#CONFIG_FILENAME = "config.yml"
 
 class PolarAccessLinkExample(object):
     """Aplicação exemplo para Polar Open AccessLink v3."""
@@ -30,7 +33,7 @@ class PolarAccessLinkExample(object):
         while self.running:
             print("\nEscolha uma opção:\n" +
                   "-----------------------\n" +
-                  #"1) Obter informações do usuário\n" +
+                  "1) Obter informações do usuário\n" +
                   #"2) Obter dados transacionais disponíveis\n" +
                   "3) Obter dados não transacionais disponíveis\n" +
                   #"4) Revogar token de acesso\n" +

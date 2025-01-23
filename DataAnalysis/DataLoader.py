@@ -24,7 +24,7 @@ class DataLoader:
         # Extraindo calorias, duração e combinando data e dia da semana
         extracted_data = [{
             "calories": entry["calories"],
-            "duration": int(entry["duration"][2:-1]),
+            "duration": entry["duration"][2:-1],
             "start_time": datetime.datetime.strptime(entry["start_time"][:10], '%Y-%m-%d').strftime('%d/%m (%A)')
         } for entry in self.data]
         df = pd.DataFrame(extracted_data)

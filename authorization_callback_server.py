@@ -3,7 +3,7 @@ from __future__ import print_function
 
 
 import requests
-from flask import Flask, request, redirect
+from flask import Flask, request, redirect # type: ignore
 
 from utils import load_config, save_config
 from accesslink import AccessLink

@@ -165,7 +165,7 @@ def exibir_informacoes_usuario():
     return user_info
 
 # Streamlit - Interface
-st.title("Bem vindo! 👋")
+
 informacoes_usuario = exibir_informacoes_usuario()
 
 primeiro_nome = informacoes_usuario.get("first-name", "Atributo não encontrado")

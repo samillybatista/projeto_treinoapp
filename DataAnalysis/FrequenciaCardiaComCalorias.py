@@ -1,12 +1,14 @@
-
-from DataAnalysis.DataLoader import DataLoader
-
+from projeto_treinoapp.DataAnalysis.DataLoader import DataLoader
+import numpy as np
+from sklearn.cluster import KMeans
+import pandas as pd
+import plotly.express as px
 import re
 
-import plotly.express as px
-import pandas as pd
-from sklearn.cluster import KMeans
-import numpy as np
+import os
+import sys
+
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 # Caminho para o arquivo JSON fornecido
 file_path = '../Data/bioData.json'
@@ -16,7 +18,8 @@ json_data = data_loader.load_json_data()
 df = data_loader.extract_data()
 
 # Remover o dia da semana do campo 'start_time' e converter para datetime
-df['start_time'] = df['start_time'].apply(lambda x: re.match(r'\d{2}/\d{2}', x).group(0) + '/2024')
+df['start_time'] = df['start_time'].apply(
+    lambda x: re.match(r'\d{2}/\d{2}', x).group(0) + '/2024')
 df['start_time'] = pd.to_datetime(df['start_time'], format='%d/%m/%Y')
 
 # Ajustar o tamanho dos pontos e formatar as datas no hover
@@ -58,15 +61,18 @@ color_map = {
 }
 
 # Criar gráfico de dispersão interativo com Plotly, usando os clusters categorizados
+
 fig = px.scatter(df, x='duration', y='heart_rate_avg', color='cluster_category',
-                 color_discrete_map=color_map,hover_data={'Data': True},
+                 color_discrete_map=color_map, hover_data={'Data': True},
                  labels={
                      'heart_rate_avg': 'Frequência Cardíaca Média (bpm)',
                      'calories': 'Calorias Queimadas',
                      'cluster_category': 'Intensidade do Treino'
                  },
                  title='Relação entre Frequência Cardíaca Média e Calorias Queimadas com Agrupamento',
-                 category_orders={"cluster_category": ["Alta Intensidade", "Intensidade Moderada", "Baixa Intensidade"]}# Ordem personalizada das legendas
+                 # Ordem personalizada das legendas
+                 category_orders={"cluster_ca   tegory": [
+                     "Alta Intensidade", "Intensidade Moderada", "Baixa Intensidade"]}
                  )
 
 # Aumentar o tamanho dos pontos para melhorar a visualização
@@ -74,4 +80,4 @@ fig.update_traces(marker=dict(size=14))
 fig.write_html("../html/Plot_Frequencia_Calorias.html")
 
 # Exibir o gráfico interativo
-fig.show()
+# fig.show()
