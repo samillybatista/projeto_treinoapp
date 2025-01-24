@@ -756,7 +756,7 @@
             },
             {
               "category": "Posterior de Coxa",
-              "exercise": "Cadeira flexora",
+              "sets":["Cadeira flexora"],
               "details": "3 séries, 15-12-10 repetições, 45s descanso"
             },
         {
