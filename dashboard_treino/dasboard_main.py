@@ -14,7 +14,7 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 # from requisicaoDados import PolarAccessLinkExample
 from polarAccessLinkAdapter import PolarAccessLinkAdapter
-from projeto_treinoapp.DataAnalysis.FrequenciaCardiaComCalorias import fig
+from DataAnalysis.FrequenciaCardiaComCalorias import fig
 
 
 def main():
