@@ -9,6 +9,9 @@ import streamlit as st  # type: ignore
 import calendar
 from datetime import datetime
 import plotly.express as px  # type: ignore
+import re
+from sklearn.cluster import KMeans
+from DataAnalysis.DataLoader import DataLoader
 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
@@ -36,7 +39,7 @@ def main():
     }
     .st-emotion-cache-yw8pof {
         padding: 0px 0px 0px 0px;
-        max-width: 900.800px;
+        max-width: 1200.800px;
     }
 
     .st-emotion-cache-14553y9.e121c1cl0 {
@@ -52,6 +55,7 @@ def main():
     }
     </style>
     """
+
     st.markdown(page_bg_img, unsafe_allow_html=True)
 
     # Função para carregar os dados de bio do atleta
@@ -167,7 +171,6 @@ def main():
         return user_info
 
     # Streamlit - Interface
-
     informacoes_usuario = exibir_informacoes_usuario()
 
     primeiro_nome = informacoes_usuario.get("first-name", "Atributo não encontrado")
@@ -186,8 +189,115 @@ def main():
 
     # Gráfico 1: Intensidade ao Longo do Tempo
     with col1:
+        # Configurar Streamlit
         st.subheader("Intensidade do Treino")
 
+        # Caminho para o arquivo JSON fornecido
+        file_path = '../Data/bioData.json'
+
+        data_loader = DataLoader(file_path)
+        json_data = data_loader.load_json_data()
+        df = data_loader.extract_data()
+
+        # Remove o dia da semana do campo 'start_time' e converter para datetime
+        df['start_time'] = df['start_time'].apply(
+            lambda x: re.match(r'\d{2}/\d{2}', x).group(0) + '/2024')
+        df['start_time'] = pd.to_datetime(df['start_time'], format='%d/%m/%Y')
+
+        # Ajusta o tamanho dos pontos e formatar as datas no hover
+        df['Data'] = df['start_time'].dt.strftime('%d/%m/%Y')
+
+        # Obtem os anos e meses únicos
+        anos_unicos_Intensity = df["start_time"].dt.year.unique()
+        meses_unicos_en_Intensity = df["start_time"].dt.month.unique()
+
+        # Dicionário de tradução de meses de inglês para português
+        meses_pt = {
+            1: "Janeiro",
+            2: "Fevereiro",
+            3: "Março",
+            4: "Abril",
+            5: "Maio",
+            6: "Junho",
+            7: "Julho",
+            8: "Agosto",
+            9: "Setembro",
+            10: "Outubro",
+            11: "Novembro",
+            12: "Dezembro"
+        }
+
+        # Criar os widgets para seleção de ano e mês
+        col1_1, col1_2 = st.columns(2)
+        with col1_1:
+            selected_month_Intensity = st.selectbox(
+                "Selecione o mês",
+                [meses_pt[mes] for mes in meses_unicos_en_Intensity],
+                key="mes_intensidade"
+            )
+        with col1_2:
+            selected_year_Intensity = st.selectbox(
+                "Selecione o ano",
+                anos_unicos_Intensity,
+                key="ano_intensidade"
+            )
+
+        # Adiciona dados de frequência cardíaca ao DataFrame
+        heart_rate_data = [entry["heart_rate"]["average"] for entry in json_data]
+        df['heart_rate_avg'] = heart_rate_data
+
+        # Seleciona as colunas para o clustering
+        X = df[['heart_rate_avg', 'calories']]
+
+        # Aplica K-means com 3 clusters
+        kmeans = KMeans(n_clusters=3, random_state=0).fit(X)
+        df['cluster'] = kmeans.labels_
+
+        # Calcula a média de frequência cardíaca e calorias por cluster
+        cluster_means = df.groupby('cluster')[['heart_rate_avg', 'calories']].mean()
+
+        # Ordena os clusters por calorias e atribuir rótulos baseados nas médias
+        sorted_clusters = cluster_means.sort_values(by='calories')
+        cluster_labels = {sorted_clusters.index[0]: 'Baixa Intensidade',
+                          sorted_clusters.index[1]: 'Intensidade Moderada',
+                          sorted_clusters.index[2]: 'Alta Intensidade'}
+        df['cluster_category'] = df['cluster'].map(cluster_labels)
+
+        # Define cores para cada categoria de cluster
+        color_map = {
+            'Baixa Intensidade': 'green',
+            'Intensidade Moderada': 'blue',
+            'Alta Intensidade': 'red'
+        }
+
+        # Filtra o DataFrame pelo mês e ano selecionados
+        mes_selecionado_num = {v: k for k, v in meses_pt.items()}[selected_month_Intensity]
+        df_filtrado = df[
+            (df['start_time'].dt.year == selected_year_Intensity) &
+            (df['start_time'].dt.month == mes_selecionado_num)
+            ]
+
+        # Cria gráfico de dispersão interativo com os dados filtrados
+        fig = px.scatter(
+            df_filtrado,
+            x='duration',
+            y='heart_rate_avg',
+            color='cluster_category',
+            color_discrete_map=color_map,
+            hover_data={'Data': True},
+            labels={
+                'heart_rate_avg': 'Frequência Cardíaca Média (bpm)',
+                'calories': 'Calorias Queimadas',
+                'cluster_category': 'Intensidade do Treino'
+            },
+            category_orders={"cluster_category": [
+                "Alta Intensidade", "Intensidade Moderada", "Baixa Intensidade"]}
+        )
+
+        # Aumenta o tamanho dos pontos para melhorar a visualização
+        fig.update_traces(marker=dict(size=10))
+
+        # Exibe o gráfico
         st.plotly_chart(fig, use_container_width=True)
 
     def get_calories_by_date(bio_data, selected_date):
@@ -205,7 +315,8 @@ def main():
                     else:
                         duration_minutes = 0
                     return (
-                    entry["calories"], entry["heart_rate"]["average"], entry["heart_rate"]["maximum"], duration_minutes)
+                        entry["calories"], entry["heart_rate"]["average"], entry["heart_rate"]["maximum"],
+                        duration_minutes)
         return 0, 0, 0, 0
 
     # Gráfico 2: Resumo Diário
@@ -242,12 +353,12 @@ def main():
         data = []
         for entry in bio_data:
             if isinstance(entry, dict) and "start_time" in entry:
-                # Converter a data do formato string para datetime.date
+                # Converte a data do formato string para datetime.date
                 entry_date = datetime.strptime(entry["start_time"][:10], "%Y-%m-%d").date()
 
-                # Verificar se o mês e o ano correspondem ao selecionado
+                # Verifica se o mês e o ano correspondem ao selecionado
                 if entry_date.month == selected_month and entry_date.year == selected_year:
-                    # Processar duração
+                    # Processa duração
                     duration = entry.get("duration", "")
                     if duration.startswith("PT") and duration.endswith("S"):
                         try:
@@ -258,7 +369,7 @@ def main():
                     else:
                         duration_minutes = 0
 
-                    # Adicionar os dados processados à lista
+                    # Adiciona os dados processados à lista
                     data.append({
                         "Mês": entry_date.month,
                         "Ano": entry_date.year,
@@ -269,13 +380,12 @@ def main():
                         "Duração": duration_minutes
                     })
 
-        # Retornar os dados como DataFrame
+        # Retorna os dados como DataFrame
         return pd.DataFrame(data)
 
-        # Gráfico de Calorias Perdidas Mensalmente
-
+    # Gráfico de Calorias Perdidas Mensalmente
     with col3:
-        # Criar bio_data_df
+        # Cria bio_data_df
         bio_data_df = pd.DataFrame(bio_data_full)
         bio_data_df["Data"] = pd.to_datetime(bio_data_df["start_time"]).dt.date
         bio_data_df["Calorias"] = bio_data_df["calories"]
@@ -285,38 +395,7 @@ def main():
         bio_data_df["FC_Media"] = bio_data_df["heart_rate"].apply(
             lambda x: x.get("average", 0) if isinstance(x, dict) else 0)
 
-        # Obter os anos e meses únicos
-        anos_unicos = treino_data["Data"].dt.year.unique()
-        meses_unicos_en = treino_data["Data"].dt.month.unique()
-
-        # Dicionário de tradução de meses de inglês para português
-        meses_pt = {
-            1: "Janeiro",
-            2: "Fevereiro",
-            3: "Março",
-            4: "Abril",
-            5: "Maio",
-            6: "Junho",
-            7: "Julho",
-            8: "Agosto",
-            9: "Setembro",
-            10: "Outubro",
-            11: "Novembro",
-            12: "Dezembro"
-        }
-
-        # Criar os widgets para seleção de ano e mês
-        col1_1, col1_2 = st.columns(2)
-        with col1_1:
-            selected_month = st.selectbox("Selecione o mês", [meses_pt[mes] for mes in meses_unicos_en])
-        with col1_2:
-            selected_year = st.selectbox("Selecione o ano", anos_unicos)
-
-        # Filtrar os dados com base na seleção do usuário
-        treino_data_filtrado = treino_data[(treino_data["Data"].dt.year == selected_year) & (
-                    treino_data["Data"].dt.month == [k for k, v in meses_pt.items() if v == selected_month][0])]
-
-        # Carregar treino_data
+        # Carrega treino_data
         script_dir = os.path.dirname(os.path.abspath(__file__))
         treino_data_path = os.path.join(script_dir, "../Data/set.json")
         with open(treino_data_path, "r") as file:
@@ -336,49 +415,49 @@ def main():
             how="left"
         )
 
-        # Filtrar dados pelo mês e ano selecionados
-        mes_selecionado = [k for k, v in meses_pt.items() if v == selected_month][0]
+        # Filtra dados pelo mês e ano selecionados
+        mes_selecionado = [k for k, v in meses_pt.items() if v == selected_month_Intensity][0]
         treino_data_filtrado = treino_data_df[
-            (pd.to_datetime(treino_data_df["Data"]).dt.year == selected_year) &
+            (pd.to_datetime(treino_data_df["Data"]).dt.year == selected_year_Intensity) &
             (pd.to_datetime(treino_data_df["Data"]).dt.month == mes_selecionado)
             ]
 
-        # Agrupar e somar métricas por mês e exercício
+        # Agrupa e soma métricas por mês e exercício
         calorias_por_mes = treino_data_filtrado.groupby(["Data", "Exercício"], as_index=False).sum(numeric_only=True)
 
-        # Selecionar métrica para visualização
+        # Seleciona métrica para visualização
         metric_options = ["Calorias", "Duração", "Frequência Cardíaca Máxima", "Frequência Cardíaca Média"]
-        selected_metric = st.selectbox("Indicador", metric_options)
+        selected_metric = st.selectbox("Indicador:", metric_options)
 
-        # Converter a coluna "Data" para datetime, se ainda não estiver
+        # Converte a coluna "Data" para datetime, se ainda não estiver
         bio_data_df["Data"] = pd.to_datetime(bio_data_df["Data"], errors='coerce')
 
-        # Filtrar os dados de bio_data_df com base no ano e mês selecionados
+        # Filtra os dados de bio_data_df com base no ano e mês selecionados
         bio_data_filtrado = bio_data_df[
-            (bio_data_df["Data"].dt.year == selected_year) &
-            (bio_data_df["Data"].dt.month == [k for k, v in meses_pt.items() if v == selected_month][0])
+            (bio_data_df["Data"].dt.year == selected_year_Intensity) &
+            (bio_data_df["Data"].dt.month == [k for k, v in meses_pt.items() if v == selected_month_Intensity][0])
             ]
 
         if selected_metric == "Calorias":
 
-            # Criar um DataFrame para plotar todas as calorias queimadas
+            # Cria um DataFrame para plotar todas as calorias queimadas
             calorias_por_mes = pd.DataFrame({
                 "Data": bio_data_filtrado["Data"],
                 "Calorias Queimadas": bio_data_filtrado["Calorias"]  # Supondo que a coluna se chama "Calorias"
             })
 
-            # Plotar gráfico
-            # Criar o gráfico de calorias queimadas
+            # Plota gráfico
+            # Cria o gráfico de calorias queimadas
             fig_calorias = px.line(
                 calorias_por_mes,
                 x="Data",
                 y="Calorias Queimadas",
                 markers=True,
-                title=f"Calorias Queimadas Mensais - {selected_month}",
+                title=f"Calorias Queimadas Mensais - {selected_month_Intensity}",
                 labels={"Data": "Data", "Calorias Queimadas": "Calorias"},
             )
 
-            # Atualizar o layout do gráfico
+            # Atualiza o layout do gráfico
             fig_calorias.update_layout(
                 xaxis_title="Data",
                 yaxis_title="Calorias",
@@ -386,29 +465,29 @@ def main():
                 xaxis=dict(tickangle=45)
             )
 
-            # Exibir o gráfico no Streamlit
+            # Exibe o gráfico no Streamlit
             st.plotly_chart(fig_calorias, use_container_width=True)
 
         elif selected_metric == "Duração":
-            # Criar um DataFrame para plotar todas as durações do treino
+            # Cria um DataFrame para plotar todas as durações do treino
             duracoes_por_mes = pd.DataFrame({
                 "Data": bio_data_filtrado["Data"],
                 "Duração do Treino": bio_data_filtrado["Duração"]  # Supondo que a coluna se chama "Duração"
             })
 
-            # Plotar gráfico
-            # Criar o gráfico de durações do treino
+            # Plota gráfico
+            # Cria o gráfico de durações do treino
             fig_duracao = px.line(
                 duracoes_por_mes,
                 x="Data",
                 y="Duração do Treino",
                 markers=True,
-                title=f"Durações do Treino Mensais - {selected_month}",
+                title=f"Durações do Treino Mensais - {selected_month_Intensity}",
                 labels={"Data": "Data", "Duração do Treino": "Duração (minutos)"},
                 line_shape='linear'  # Forma da linha (pode ser ajustada conforme necessário)
             )
 
-            # Atualizar o layout do gráfico
+            # Atualiza o layout do gráfico
             fig_duracao.update_layout(
                 xaxis_title="Data",
                 yaxis_title="Duração (minutos)",
@@ -416,28 +495,28 @@ def main():
                 xaxis=dict(tickangle=45)
             )
 
-            # Exibir o gráfico no Streamlit
+            # Exibe o gráfico no Streamlit
             st.plotly_chart(fig_duracao, use_container_width=True)
 
         elif selected_metric == "Frequência Cardíaca Máxima":
-            # Criar um DataFrame para plotar todas as frequências cardíacas
+            # Cria um DataFrame para plotar todas as frequências cardíacas
             frequencias_por_mes = pd.DataFrame({
                 "Data": bio_data_filtrado["Data"],
                 "Frequência Cardíaca": bio_data_filtrado["FC_Max"]
                 # Supondo que a coluna se chama "Frequência Cardíaca"
             })
 
-            # Criar o gráfico de frequências cardíacas
+            # Cria o gráfico de frequências cardíacas
             fig_frequencia = px.line(
                 frequencias_por_mes,
                 x="Data",
                 y="Frequência Cardíaca",
                 markers=True,
-                title=f"Frequências Cardíacas Mensais - {selected_month}",
+                title=f"Frequências Cardíacas Mensais - {selected_month_Intensity}",
                 labels={"Data": "Data", "Frequência Cardíaca": "Frequência Cardíaca (bpm)"},
             )
 
-            # Atualizar o layout do gráfico
+            # Atualiza o layout do gráfico
             fig_frequencia.update_layout(
                 xaxis_title="Data",
                 yaxis_title="Frequência Cardíaca (bpm)",
@@ -445,27 +524,27 @@ def main():
                 xaxis=dict(tickangle=45)
             )
 
-            # Exibir o gráfico no Streamlit
+            # Exibe o gráfico no Streamlit
             st.plotly_chart(fig_frequencia, use_container_width=True)
 
         else:
-            # Criar um DataFrame para plotar todas as frequências cardíacas médias
+            # Cria um DataFrame para plotar todas as frequências cardíacas médias
             frequencias_media_por_mes = pd.DataFrame({
                 "Data": bio_data_filtrado["Data"],
                 "Frequência Cardíaca Média": bio_data_filtrado["FC_Media"]  # Supondo que a coluna se chama "FC_Media"
             })
 
-            # Criar o gráfico de frequências cardíacas médias
+            # Cria o gráfico de frequências cardíacas médias
             fig_frequencia_media = px.line(
                 frequencias_media_por_mes,
                 x="Data",
                 y="Frequência Cardíaca Média",
                 markers=True,
-                title=f"Frequências Cardíacas Médias Mensais - {selected_month}",
+                title=f"Frequências Cardíacas Médias Mensais - {selected_month_Intensity}",
                 labels={"Data": "Data", "Frequência Cardíaca Média": "Frequência Cardíaca (bpm)"},
             )
 
-            # Atualizar o layout do gráfico
+            # Atualiza o layout do gráfico
             fig_frequencia_media.update_layout(
                 xaxis_title="Data",
                 yaxis_title="Frequência Cardíaca (bpm)",
@@ -473,7 +552,7 @@ def main():
                 xaxis=dict(tickangle=45)
             )
 
-            # Exibir o gráfico no Streamlit
+            # Exibe o gráfico no Streamlit
             st.plotly_chart(fig_frequencia_media, use_container_width=True)
 
     with col4:
@@ -485,34 +564,38 @@ def main():
             Retorna as categorias de todos os exercícios realizados na data selecionada,
             com categorias, exercícios e detalhes expandidos.
             """
-
             data_str = data_selecionada.strftime("%Y-%m-%d")  # Formatar a data para string
 
-            if data_str in set_data["schedule"]:
-                # Extrair categorias e sets de todos os exercícios
-                categorias_sets = []
-                for ex in set_data["schedule"][data_str]["exercises"]:
-                    categoria = ex.get("category", "Desconhecida")
-                    sets = ex.get("sets", [])
+            # Verificar se a data está no conjunto de dados
+            if data_str not in set_data.get("schedule", {}):
+                st.write(f"Data {data_str} não encontrada no cronograma.")
+                return pd.DataFrame(columns=["Categoria", "Exercício", "Detalhe 1", "Detalhe 2"])
 
-                    # Tratar diferentes estruturas de sets
-                    if isinstance(sets[0], dict):
-                        # Estrutura com dicionários de exercícios
+            # Processar os exercícios do dia
+            categorias_sets = []
+            exercicios = set_data["schedule"][data_str].get("exercises", [])
+            if not exercicios:
+                st.write(f"Nenhum exercício encontrado para a data {data_str}.")
+                return pd.DataFrame(columns=["Categoria", "Exercício", "Detalhe 1", "Detalhe 2"])
+
+            # Iterar pelos exercícios
+            for ex in exercicios:
+                categoria = ex.get("category", "Desconhecida")
+                sets = ex.get("sets", [])
+
+                if sets:  # Se houver sets, processa
+                    if isinstance(sets[0], dict):  # Estrutura com dicionários
                         for set_item in sets:
                             exercicio = set_item.get('exercise', 'Sem exercício')
                             detalhes = set_item.get('details', '').split(', ')
-
-                            # Adicionar detalhes com preenchimento para manter consistência
                             detalhes_preenchidos = detalhes + [''] * (2 - len(detalhes))
-
                             categorias_sets.append({
                                 "Categoria": categoria,
                                 "Exercício": exercicio,
                                 "Detalhe 1": detalhes_preenchidos[0],
                                 "Detalhe 2": detalhes_preenchidos[1]
                             })
-                    else:
-                        # Estrutura com strings simples de exercícios
+                    else:  # Estrutura com strings simples
                         for exercicio in sets:
                             categorias_sets.append({
                                 "Categoria": categoria,
@@ -520,16 +603,21 @@ def main():
                                 "Detalhe 1": "",
                                 "Detalhe 2": ""
                             })
+                else:  # Caso a lista de sets esteja vazia
+                    categorias_sets.append({
+                        "Categoria": categoria,
+                        "Exercício": "Sem exercício",
+                        "Detalhe 1": "",
+                        "Detalhe 2": ""
+                    })
 
-                # Retornar como DataFrame
-                return pd.DataFrame(categorias_sets)
-            else:
-                return pd.DataFrame(columns=["Categoria", "Exercício", "Detalhe 1", "Detalhe 2"])
+            # Criar e retornar o DataFrame
+            return pd.DataFrame(categorias_sets)
 
         # Gera a tabela com categorias para a data selecionada
         tabela_categorias_dia = criar_tabela_categorias_por_dia(data_selecionada, set_data)
 
-        # Exibir a tabela no Streamlit
+        # Exibe a tabela no Streamlit
         if not tabela_categorias_dia.empty:
             st.dataframe(tabela_categorias_dia)
         else:
